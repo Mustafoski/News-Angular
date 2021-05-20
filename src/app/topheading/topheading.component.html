@@ -1,0 +1,57 @@
+<div class="container mt-5">
+  <!-- Nav -->
+  <div>
+    <div class="container mt-5">
+      <div class="row navbar">
+        <div class="col">
+          <h4>Top Highlights</h4>
+        </div>
+        <div class="col">
+          <h6 class="h6"><span>Search for term:</span></h6>
+          <app-search-bar (submitted)="onTerm($event)"></app-search-bar>
+        </div>
+        <div class="col">
+          <article>
+            <h6 class="h6"><span>Select a category:</span></h6>
+            <select
+              class="form-control"
+              [(ngModel)]="topHeadingDisplay"
+              (change)="selectChangeHandler($event)"
+            >
+              <option [value]="business" [selected]>Business</option>
+              <option [value]="entertainment">Entertainment</option>
+              <option [value]="general">General</option>
+              <option [value]="science">Science</option>
+              <option [value]="technology">Technology</option>
+            </select>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Nav -->
+
+  <!-- Card Data -->
+
+  <div class="row">
+    <div
+      class="col-lg-3 mt-3 mb-3 card shadow card-body"
+      *ngFor="let data of topHeadingDisplay"
+    >
+      <div class="box">
+        <img src="{{ data.urlToImage }}" width="100%" />
+        <h5 class="mt-2">{{ data.title }}</h5>
+        <p class="mt-2">{{ data.content }}</p>
+        <a
+          href="{{ data.url }}"
+          target="_blank"
+          class="btn btn-primary btn-sm mt-2"
+          >Read More</a
+        >
+      </div>
+    </div>
+  </div>
+  <!-- Spinner -->
+
+  <!-- End of Card -->
+</div>
