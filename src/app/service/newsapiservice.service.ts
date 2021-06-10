@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const API_URL = environment.API_URL;
-const API_KEY = environment.API_KEY;
+const API_KEY = 'd1a47faa223344649b4a8e18e36a4179';
+const API_URL = 'https://newsapi.org/v2';
 
 @Injectable({
   providedIn: 'root',
